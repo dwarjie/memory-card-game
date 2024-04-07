@@ -16,6 +16,7 @@ export default {
 			"button-sm": "2rem",
 			"small-logo-sm": "2rem",
 			"big-logo-sm": "2.25rem",
+			"small-text": "1.5rem",
 		},
 		fontFamily: {
 			"main-font": ["Crimson Text", "serif"],
