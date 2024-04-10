@@ -1,35 +1,48 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPopularAnime } from "../utils/fetchAPI";
 import { randomIndex } from "../utils/randomCards";
 import LoadingScreen from "../components/LoadingScreen";
+import { saveScore } from "../utils/saveScore";
 
 export const memoryLoader = async () => {
 	const cards = await getPopularAnime();
-	return cards.data.slice(0, 9);
+	return cards.data;
 };
 
 export default function MemoryCard() {
 	const data = useLoaderData();
-	console.log(data);
+	const navigate = useNavigate();
 	const [score, setScore] = useState(0);
 	const [clickedCards, setClickedCards] = useState([]);
 	const [selectedCards, setSelectedCards] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		if (data) getRandomCards();
+
+		if (selectedCards) setLoading(false);
 	}, []);
 
-	const chooseCard = (card) => {
-		if (clickedCards.includes(card)) return console.log("Exist");
+	useEffect(() => {
+		if (score === 9) {
+			navigate(`../win/${score}`);
+		}
+	}, [score]);
 
-		if (score === 9) return console.log("Winner");
+	const chooseCard = (card) => {
+		if (clickedCards.includes(card)) {
+			navigate(`../lost/${score}`);
+		}
 
 		let chosenCard = clickedCards || [];
 		chosenCard.push(card);
 		setClickedCards(chosenCard);
+
 		console.log(clickedCards);
 		setScore(score + 1);
+		saveScore(score);
+
 		getRandomCards();
 	};
 
@@ -45,7 +58,7 @@ export default function MemoryCard() {
 				return (
 					<div
 						key={index}
-						className="w-36 rounded cursor-pointer transition-all duration-150 hover:scale-105 hover:shadow-sm"
+						className="w-36 rounded cursor-pointer transition-all animate-anim-grow hover:scale-105"
 						onClick={() => chooseCard(item.mal_id)}
 					>
 						<img
@@ -61,7 +74,7 @@ export default function MemoryCard() {
 
 	return (
 		<div className="w-full h-full my-6">
-			{data ? (
+			{!loading ? (
 				<>
 					<h2 className="text-small-text text-white/45 leading-none my-4">
 						{`SCORE:  ${score}`}

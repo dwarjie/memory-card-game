@@ -9,6 +9,15 @@ export default {
 			colors: {
 				overlay: "#433232",
 			},
+			keyframes: {
+				grow: {
+					"0%": { transform: "scale(0)" },
+					"100%": { transform: "scale(1)" },
+				},
+			},
+			animation: {
+				"anim-grow": "grow .4s ease-out",
+			},
 		},
 		fontSize: {
 			"small-title-sm": "3rem",

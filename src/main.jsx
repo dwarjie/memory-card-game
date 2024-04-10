@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Play from "./routes/Play";
 import MemoryCard, { memoryLoader } from "./routes/MemoryCard";
+import WinScreen, { winLoader } from "./routes/WinScreen";
+import LostScreen, { lostLoader } from "./routes/LostScreen";
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +21,16 @@ const router = createBrowserRouter([
 				path: "memory-card?",
 				element: <MemoryCard />,
 				loader: memoryLoader,
+			},
+			{
+				path: "win/:score",
+				element: <WinScreen />,
+				loader: winLoader,
+			},
+			{
+				path: "lost/:score",
+				element: <LostScreen />,
+				loader: lostLoader,
 			},
 		],
 	},
