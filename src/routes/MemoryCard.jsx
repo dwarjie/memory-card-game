@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPopularAnime } from "../utils/fetchAPI";
 import { randomIndex } from "../utils/randomCards";
+import LoadingScreen from "../components/LoadingScreen";
 
 export const memoryLoader = async () => {
 	const cards = await getPopularAnime();
@@ -60,15 +61,21 @@ export default function MemoryCard() {
 
 	return (
 		<div className="w-full h-full my-6">
-			<h2 className="text-small-text text-white/45 leading-none my-4">
-				{`SCORE:  ${score}`}
-			</h2>
-			<div className="h-full flex flex-col items-center gap-6">
-				{renderCards()}
-			</div>
-			<h2 className="text-center text-small-text text-white/45 leading-none my-4">
-				SELECT A CARD
-			</h2>
+			{data ? (
+				<>
+					<h2 className="text-small-text text-white/45 leading-none my-4">
+						{`SCORE:  ${score}`}
+					</h2>
+					<div className="h-full flex flex-col items-center gap-6">
+						{renderCards()}
+					</div>
+					<h2 className="text-center text-small-text text-white/45 leading-none my-4">
+						SELECT A CARD
+					</h2>
+				</>
+			) : (
+				<LoadingScreen />
+			)}
 		</div>
 	);
 }
