@@ -13,8 +13,9 @@ function MenuScreen() {
 					<h3 className="text-button-sm">
 						<Link to={`play/memory-card`}>PLAY</Link>
 					</h3>
-					<h3 className="text-button-sm">TUTORIAL</h3>
-					<h3 className="text-button-sm">ABOUT</h3>
+					<h3 className="text-button-sm">
+						<Link to={`about`}>ABOUT</Link>
+					</h3>
 				</div>
 			</div>
 		</div>

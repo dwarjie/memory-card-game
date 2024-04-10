@@ -58,7 +58,7 @@ export default function MemoryCard() {
 				return (
 					<div
 						key={index}
-						className="w-36 rounded cursor-pointer transition-all animate-anim-grow hover:scale-105"
+						className="max-w-36 rounded cursor-pointer transition-all animate-anim-grow hover:scale-105 md:max-w-52"
 						onClick={() => chooseCard(item.mal_id)}
 					>
 						<img
@@ -76,10 +76,10 @@ export default function MemoryCard() {
 		<div className="w-full h-full my-6">
 			{!loading ? (
 				<>
-					<h2 className="text-small-text text-white/45 leading-none my-4">
+					<h2 className="text-small-text text-white/45 leading-none my-4 md:my-20">
 						{`SCORE:  ${score}`}
 					</h2>
-					<div className="h-full flex flex-col items-center gap-6">
+					<div className="h-full flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-8">
 						{renderCards()}
 					</div>
 					<h2 className="text-center text-small-text text-white/45 leading-none my-4">

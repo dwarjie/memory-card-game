@@ -25,8 +25,9 @@ export default function LostScreen() {
 				<h3 className="text-small-text">
 					<Link to={`../memory-card`}>PLAY</Link>
 				</h3>
-				<h3 className="text-small-text">TUTORIAL</h3>
-				<h3 className="text-small-text">ABOUT</h3>
+				<h3 className="text-button-sm">
+					<Link to={`about`}>ABOUT</Link>
+				</h3>
 			</div>
 		</div>
 	);

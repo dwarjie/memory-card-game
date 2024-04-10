@@ -7,6 +7,7 @@ import Play from "./routes/Play";
 import MemoryCard, { memoryLoader } from "./routes/MemoryCard";
 import WinScreen, { winLoader } from "./routes/WinScreen";
 import LostScreen, { lostLoader } from "./routes/LostScreen";
+import AboutScreen from "./routes/AboutScreen";
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 				loader: lostLoader,
 			},
 		],
+	},
+	{
+		path: "about",
+		element: <AboutScreen />,
 	},
 ]);
 
