@@ -4,7 +4,7 @@
 
 ---
 
-Memory Card Game made for The Odin Project using ReactJS. You may try it live here
+Memory Card Game made for The Odin Project using ReactJS. You may try it live [here](https://dwarjie.github.io/memory-card-game/)
 
 ## Installation
 
