@@ -1,6 +1,7 @@
 {
 	"name": "memory-card-game",
 	"private": true,
+	"homepage": "https://dwarjie.github.io/memory-card-game",
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
