@@ -11,10 +11,10 @@ function MenuScreen() {
 				</div>
 				<div className="text-center text-white">
 					<h3 className="text-button-sm">
-						<Link to={`play/memory-card`}>PLAY</Link>
+						<Link to={`/play/memory-card`}>PLAY</Link>
 					</h3>
 					<h3 className="text-button-sm">
-						<Link to={`about`}>ABOUT</Link>
+						<Link to={`/about`}>ABOUT</Link>
 					</h3>
 				</div>
 			</div>

@@ -10,7 +10,7 @@ export default function AboutScreen() {
 					<div className="flex flex-col justify-start text-white/45 gap-0">
 						<h2
 							className="text-small-logo-sm leading-none cursor-pointer"
-							onClick={() => navigate(`../`)}
+							onClick={() => navigate(`/memory-card-game`)}
 						>
 							ANIME <br /> <span className="text-big-logo-sm">SCHOOL</span>
 						</h2>

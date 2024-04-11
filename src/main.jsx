@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import MenuScreen from "./routes/MenuScreen";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Play from "./routes/Play";
 import MemoryCard, { memoryLoader } from "./routes/MemoryCard";
@@ -9,9 +9,9 @@ import WinScreen, { winLoader } from "./routes/WinScreen";
 import LostScreen, { lostLoader } from "./routes/LostScreen";
 import AboutScreen from "./routes/AboutScreen";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
 	{
-		path: "/",
+		path: "/memory-card-game",
 		element: <MenuScreen />,
 	},
 	{

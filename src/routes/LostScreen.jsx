@@ -23,10 +23,10 @@ export default function LostScreen() {
 			</div>
 			<div className="text-left text-white mt-10">
 				<h3 className="text-small-text">
-					<Link to={`../memory-card`}>PLAY</Link>
+					<Link to={`/play/memory-card`}>PLAY</Link>
 				</h3>
 				<h3 className="text-button-sm">
-					<Link to={`about`}>ABOUT</Link>
+					<Link to={`/about`}>ABOUT</Link>
 				</h3>
 			</div>
 		</div>
