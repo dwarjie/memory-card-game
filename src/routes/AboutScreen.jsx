@@ -17,7 +17,10 @@ export default function AboutScreen() {
 					</div>
 					<div className="w-auto h-auto text-center text-white/45 mt-16">
 						<div>
-							<h2 className="text-small-logo-sm leading-none mb-3">
+							<h2
+								data-testid="about"
+								className="text-small-logo-sm leading-none mb-3"
+							>
 								Hi! I'm Mark Darius
 							</h2>
 							<h2 className="text-small-logo-sm leading-none">

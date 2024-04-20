@@ -15,6 +15,12 @@ npm install
 npm run dev
 ```
 
+## Run the test
+
+```bash
+npm run test
+```
+
 ## Features
 
 - Score System
@@ -22,9 +28,14 @@ npm run dev
 - Card Animations
 - Saving of Highest Score
 
-## What I used
+## What I use for creating the application
 
 - ReactJS
 - Vite
 - React Router
 - TailwindCSS
+
+## What I use for testing the application
+
+- Vitest
+- React-testing-library
